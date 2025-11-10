@@ -5617,25 +5617,30 @@
   <file name="src/lime/_internal/backend/native/ApplicationEventInfo.cpp" >
    <depend name="include/lime/_internal/backend/native/ApplicationEventInfo.h"/>
   </file>
-  <file name="src/hxcodec/vlc/Types.cpp" >
-   <depend name="include/hxcodec/vlc/Types.h"/>
-  </file>
-  <file name="src/hxcodec/flixel/FlxVideo.cpp" >
+  <file name="src/hxcodec/VideoHandler.cpp" >
    <depend name="include/Std.h"/>
    <depend name="include/Sys.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/flixel/FlxG.h"/>
    <depend name="include/flixel/FlxGame.h"/>
+   <depend name="include/flixel/input/FlxKeyManager.h"/>
+   <depend name="include/flixel/input/IFlxInputManager.h"/>
+   <depend name="include/flixel/input/keyboard/FlxKeyboard.h"/>
+   <depend name="include/flixel/system/FlxSound.h"/>
    <depend name="include/flixel/system/frontEnds/SignalFrontEnd.h"/>
    <depend name="include/flixel/system/frontEnds/SoundFrontEnd.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/flixel/util/IFlxSignal.h"/>
    <depend name="include/flixel/util/_FlxSignal/FlxBaseSignal.h"/>
    <depend name="include/flixel/util/_FlxSignal/FlxSignal0.h"/>
-   <depend name="include/hxcodec/flixel/FlxVideo.h"/>
-   <depend name="include/hxcodec/openfl/Video.h"/>
+   <depend name="include/hxcodec/VideoHandler.h"/>
+   <depend name="include/hxcodec/vlc/VLCBitmap.h"/>
+   <depend name="include/lime/app/Application.h"/>
    <depend name="include/lime/app/IModule.h"/>
-   <depend name="include/lime/app/_Event_Void_Void.h"/>
+   <depend name="include/lime/app/Module.h"/>
+   <depend name="include/lime/ui/Window.h"/>
    <depend name="include/openfl/Lib.h"/>
+   <depend name="include/openfl/display/Application.h"/>
    <depend name="include/openfl/display/Bitmap.h"/>
    <depend name="include/openfl/display/DisplayObject.h"/>
    <depend name="include/openfl/display/DisplayObjectContainer.h"/>
@@ -5649,12 +5654,11 @@
    <depend name="include/openfl/events/IEventDispatcher.h"/>
    <depend name="include/sys/FileSystem.h"/>
   </file>
-  <file name="src/hxcodec/openfl/Video.cpp" >
+  <file name="src/hxcodec/vlc/VLCBitmap.cpp" >
    <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/haxe/io/Path.h"/>
-   <depend name="include/hxcodec/openfl/Video.h"/>
+   <depend name="include/hxcodec/vlc/VLCBitmap.h"/>
    <depend name="include/lime/app/IModule.h"/>
-   <depend name="include/lime/app/_Event_Void_Void.h"/>
    <depend name="include/openfl/Lib.h"/>
    <depend name="include/openfl/display/Bitmap.h"/>
    <depend name="include/openfl/display/BitmapData.h"/>
@@ -5668,6 +5672,7 @@
    <depend name="include/openfl/display3D/Context3D.h"/>
    <depend name="include/openfl/display3D/textures/RectangleTexture.h"/>
    <depend name="include/openfl/display3D/textures/TextureBase.h"/>
+   <depend name="include/openfl/events/Event.h"/>
    <depend name="include/openfl/events/EventDispatcher.h"/>
    <depend name="include/openfl/events/IEventDispatcher.h"/>
    <depend name="include/openfl/utils/ByteArrayData.h"/>
@@ -13138,10 +13143,9 @@
    <depend name="include/haxe/IMap.h"/>
    <depend name="include/haxe/Log.h"/>
    <depend name="include/haxe/ds/StringMap.h"/>
-   <depend name="include/hxcodec/flixel/FlxVideo.h"/>
-   <depend name="include/hxcodec/openfl/Video.h"/>
+   <depend name="include/hxcodec/VideoHandler.h"/>
+   <depend name="include/hxcodec/vlc/VLCBitmap.h"/>
    <depend name="include/lime/app/IModule.h"/>
-   <depend name="include/lime/app/_Event_Void_Void.h"/>
    <depend name="include/openfl/Lib.h"/>
    <depend name="include/openfl/display/Bitmap.h"/>
    <depend name="include/openfl/display/DisplayObject.h"/>
@@ -16776,16 +16780,10 @@
 <include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
 <include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
 <include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
-<set name="LINC_DISCORD_RPC_PATH" value="C:/HaxeToolkit/haxe/lib/discord_rpc/1,0,0/"/>
+<set name="LINC_DISCORD_RPC_PATH" value="D:/HaxeToolkit/haxe/lib/discord_rpc/git/"/>
 <include name="${LINC_DISCORD_RPC_PATH}linc/linc_discord_rpc.xml" />
-<include name="${haxelib:hxCodec}/project/Build.xml" />
-<include name="${haxelib:hxCodec}/project/Build.xml" />
-<include name="${haxelib:hxCodec}/project/Build.xml" />
-<include name="${haxelib:hxCodec}/project/Build.xml" />
-<include name="${haxelib:hxCodec}/project/Build.xml" />
-<include name="${haxelib:hxCodec}/project/Build.xml" />
-<include name="${haxelib:hxCodec}/project/Build.xml" />
-<set name="LINC_LUA_PATH" value="C:/HaxeToolkit/haxe/lib/linc_luajit/git/"/>
+<include name='${haxelib:hxCodec}/hxcodec/vlc/LibVLCBuild.xml' />
+<set name="LINC_LUA_PATH" value="D:/HaxeToolkit/haxe/lib/linc_luajit/git/"/>
 <include name="${LINC_LUA_PATH}linc/linc_lua.xml" />
 <include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
 <error value="Hxcpp is out of date - please update" unlessApi="400" />

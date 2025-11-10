@@ -57,7 +57,7 @@ class HXCPP_CLASS_ATTRIBUTES Bitmap_obj : public  ::openfl::display::DisplayObje
 		bool smoothing;
 		 ::openfl::display::BitmapData _hx___bitmapData;
 		int _hx___imageVersion;
-		virtual void _hx___enterFrame(int deltaTime);
+		void _hx___enterFrame(int deltaTime);
 
 		void _hx___getBounds( ::openfl::geom::Rectangle rect, ::openfl::geom::Matrix matrix);
 
@@ -71,9 +71,9 @@ class HXCPP_CLASS_ATTRIBUTES Bitmap_obj : public  ::openfl::display::DisplayObje
 		 ::openfl::display::BitmapData set_bitmapData( ::openfl::display::BitmapData value);
 		::Dynamic set_bitmapData_dyn();
 
-		Float set_height(Float value);
+		virtual Float set_height(Float value);
 
-		Float set_width(Float value);
+		virtual Float set_width(Float value);
 
 };
 

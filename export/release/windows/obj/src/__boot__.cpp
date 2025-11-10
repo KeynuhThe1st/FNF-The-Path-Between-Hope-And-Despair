@@ -2814,14 +2814,11 @@
 #ifndef INCLUDED_lime__internal_backend_native_ApplicationEventInfo
 #include <lime/_internal/backend/native/ApplicationEventInfo.h>
 #endif
-#ifndef INCLUDED_hxcodec_vlc_Types
-#include <hxcodec/vlc/Types.h>
+#ifndef INCLUDED_hxcodec_VideoHandler
+#include <hxcodec/VideoHandler.h>
 #endif
-#ifndef INCLUDED_hxcodec_flixel_FlxVideo
-#include <hxcodec/flixel/FlxVideo.h>
-#endif
-#ifndef INCLUDED_hxcodec_openfl_Video
-#include <hxcodec/openfl/Video.h>
+#ifndef INCLUDED_hxcodec_vlc_VLCBitmap
+#include <hxcodec/vlc/VLCBitmap.h>
 #endif
 #ifndef INCLUDED_openfl_display_Bitmap
 #include <openfl/display/Bitmap.h>
@@ -4878,9 +4875,8 @@ __files__boot();
 ::lime::_internal::backend::native::DropEventInfo_obj::__register();
 ::lime::_internal::backend::native::ClipboardEventInfo_obj::__register();
 ::lime::_internal::backend::native::ApplicationEventInfo_obj::__register();
-::hxcodec::vlc::Types_obj::__register();
-::hxcodec::flixel::FlxVideo_obj::__register();
-::hxcodec::openfl::Video_obj::__register();
+::hxcodec::VideoHandler_obj::__register();
+::hxcodec::vlc::VLCBitmap_obj::__register();
 ::openfl::display::Bitmap_obj::__register();
 ::hscript::Tools_obj::__register();
 ::hscript::Printer_obj::__register();

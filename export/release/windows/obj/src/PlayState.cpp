@@ -340,17 +340,14 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_hxcodec_flixel_FlxVideo
-#include <hxcodec/flixel/FlxVideo.h>
+#ifndef INCLUDED_hxcodec_VideoHandler
+#include <hxcodec/VideoHandler.h>
 #endif
-#ifndef INCLUDED_hxcodec_openfl_Video
-#include <hxcodec/openfl/Video.h>
+#ifndef INCLUDED_hxcodec_vlc_VLCBitmap
+#include <hxcodec/vlc/VLCBitmap.h>
 #endif
 #ifndef INCLUDED_lime_app_IModule
 #include <lime/app/IModule.h>
-#endif
-#ifndef INCLUDED_lime_app__Event_Void_Void
-#include <lime/app/_Event_Void_Void.h>
 #endif
 #ifndef INCLUDED_openfl_Lib
 #include <openfl/Lib.h>
@@ -529,7 +526,7 @@ HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1531_addCharacterToList,"PlayState
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1566_startCharacterLua,"PlayState","startCharacterLua",0xb9f87bc0,"PlayState.startCharacterLua","PlayState.hx",1566,0xb30d7781)
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1598_getLuaObject,"PlayState","getLuaObject",0x57e876d2,"PlayState.getLuaObject","PlayState.hx",1598,0xb30d7781)
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1605_startCharacterPos,"PlayState","startCharacterPos",0xb9fb7f9c,"PlayState.startCharacterPos","PlayState.hx",1605,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1635_startVideo,"PlayState","startVideo",0xdf2b622a,"PlayState.startVideo","PlayState.hx",1635,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1643_startVideo,"PlayState","startVideo",0xdf2b622a,"PlayState.startVideo","PlayState.hx",1643,0xb30d7781)
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1616_startVideo,"PlayState","startVideo",0xdf2b622a,"PlayState.startVideo","PlayState.hx",1616,0xb30d7781)
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1656_startAndEnd,"PlayState","startAndEnd",0xe2348cb5,"PlayState.startAndEnd","PlayState.hx",1656,0xb30d7781)
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_1666_startDialogue,"PlayState","startDialogue",0x5fdf56c9,"PlayState.startDialogue","PlayState.hx",1666,0xb30d7781)
@@ -2760,11 +2757,10 @@ HXLINE(1612)		_hx_char->set_y((_hx_char->y + _hx_char->positionArray->__get(1)))
 HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,startCharacterPos,(void))
 
 void PlayState_obj::startVideo(::String name){
-            		HX_BEGIN_LOCAL_FUNC_S2(::hx::LocalFunc,_hx_Closure_0, ::hxcodec::flixel::FlxVideo,video, ::PlayState,_gthis) HXARGC(0)
+            		HX_BEGIN_LOCAL_FUNC_S1(::hx::LocalFunc,_hx_Closure_0, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_1635_startVideo)
-HXLINE(1636)			video->dispose();
-HXLINE(1637)			_gthis->startAndEnd();
+            			HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_1643_startVideo)
+HXLINE(1643)			_gthis->startAndEnd();
             		}
             		HX_END_LOCAL_FUNC0((void))
 
@@ -2776,9 +2772,9 @@ HXLINE(1622)		if (!(::sys::FileSystem_obj::exists(filepath))) {
 HXLINE(1628)			this->startAndEnd();
 HXLINE(1629)			return;
             		}
-HXLINE(1632)		 ::hxcodec::flixel::FlxVideo video =  ::hxcodec::flixel::FlxVideo_obj::__alloc( HX_CTX );
-HXLINE(1634)		video->play(filepath,null());
-HXLINE(1635)		video->onEndReached->add( ::Dynamic(new _hx_Closure_0(video,_gthis)),null(),null());
+HXLINE(1632)		 ::hxcodec::VideoHandler video =  ::hxcodec::VideoHandler_obj::__alloc( HX_CTX ,null());
+HXLINE(1640)		video->playVideo(filepath,null(),null());
+HXLINE(1641)		video->finishCallback =  ::Dynamic(new _hx_Closure_0(_gthis));
             	}
 
 
