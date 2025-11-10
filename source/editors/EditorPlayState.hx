@@ -13,7 +13,7 @@ import flixel.tweens.FlxTween;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
-import flixel.sound.FlxSound;
+import flixel.system.FlxSound;
 import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
@@ -561,8 +561,7 @@ class EditorPlayState extends MusicBeatState
 			{
 				//more accurate hit time for the ratings?
 				var lastTime:Float = Conductor.songPosition;
-				if (FlxG.sound.music != null)
-					Conductor.songPosition = FlxG.sound.music.time;
+				Conductor.songPosition = FlxG.sound.music.time;
 
 				var canMiss:Bool = !ClientPrefs.ghostTapping;
 
